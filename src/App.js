@@ -34,11 +34,9 @@ function App() {
         <h2>spaCy FastAPI React App</h2>
       </header>
 
-      <body className="App-body">
+      <div className="App-body">
         <textarea
           className="App-textarea"
-          rows="10"
-          cols="80"
           onChange={handleInputChange}
           placeholder="Enter text..."
         />
@@ -55,7 +53,7 @@ function App() {
             <span className="App-text-accent">{predictionLast}</span>
           </p>
         </div>
-      </body>
+      </div>
     </div>
   );
 }
