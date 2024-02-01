@@ -69,6 +69,11 @@
   background: #010f1e;
 }
 
+.App-text-accent {
+  color: #abcfd9;
+  font-weight: 100px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

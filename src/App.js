@@ -5,7 +5,8 @@ import logo from "./logo.svg";
 
 function App() {
   const [inputText, setInputText] = useState("");
-  const [predictionBest, setPredictionBest] = useState("");
+  const [predictionBest, setPredictionBest] = useState("waiting for input...");
+  const [predictionLast, setPredictionLast] = useState("waiting for input...");
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
@@ -43,7 +44,14 @@ function App() {
           <button className="App-button" onClick={handlePrediction}>
             Predict
           </button>
-          <p>Prediction using Best Model: {predictionBest}</p>
+          <p>
+            Prediction using Best Model:{" "}
+            <span className="App-text-accent">{predictionBest}</span>
+          </p>
+          <p>
+            Prediction using Last Model:{" "}
+            <span className="App-text-accent">{predictionLast}</span>
+          </p>
         </div>
       </body>
     </div>
