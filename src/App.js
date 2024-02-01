@@ -18,6 +18,8 @@ function App() {
     axios
       .post("http://127.0.0.1:8000/predict", payload)
       .then(function (response) {
+        setPredictionBest(response.data.predict_best);
+        setPredictionLast(response.data.predict_last);
         console.log(response.data);
       })
       .catch(function (error) {
