@@ -12,19 +12,18 @@ function App() {
   };
 
   const handlePrediction = async () => {
-    try {
-      const payload = { text: inputText };
-      console.log("Request payload:", payload);
-
-      const response = await axios.post(
-        "http://localhost:8000/predict",
-        payload
-      );
-      console.log(response.data);
-      setPredictionBest(response.data.prediction_best);
-    } catch (error) {
-      console.error("Error predicting:", error);
-    }
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", {
+        title: "foo",
+        body: "bar",
+        userId: 1,
+      })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
