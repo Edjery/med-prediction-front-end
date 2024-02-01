@@ -12,17 +12,15 @@ function App() {
   };
 
   const handlePrediction = async () => {
+    const payload = { inputText: inputText };
+
     axios
-      .post("https://jsonplaceholder.typicode.com/posts", {
-        title: "foo",
-        body: "bar",
-        userId: 1,
-      })
+      .post("http://127.0.0.1:8000/predict", payload)
       .then(function (response) {
         console.log(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        console.error(error);
       });
   };
 
@@ -38,7 +36,6 @@ function App() {
           className="App-textarea"
           rows="10"
           cols="80"
-          value={inputText}
           onChange={handleInputChange}
           placeholder="Enter text..."
         />
